@@ -1,15 +1,23 @@
 import React from "react";
+import {
+    Route,
+    NavLink
+  } from "react-router-dom";
 
-const MainNav = () => {
-    return (
-        <nav class="main-nav">
+  //import data
+import App from "../App"
+
+const MainNav = () => (
+        <nav className="main-nav">
             <ul>
-            <li><a href='#'>Cats</a></li>
-            <li><a href='#'>Dogs</a></li>
-            <li><a href='#'>Computers</a></li>
+                <li><NavLink to="/h">Cats</NavLink></li>
+                <li><NavLink to="/n">Dogs</NavLink></li>
+                <li><NavLink to="/m">Computers</NavLink></li>
             </ul>
+            <Route path="/h" component={App}  />
+            <Route path="/n" component={App}  />
+            <Route path="/m" component={App}  />
        </nav>
     );
-}
 
 export default MainNav;

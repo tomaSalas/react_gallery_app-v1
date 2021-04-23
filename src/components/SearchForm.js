@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Redirect } from "react-router-dom";
 export default class SearchForm extends Component {
   
   state = {
@@ -12,12 +12,13 @@ export default class SearchForm extends Component {
   
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.query.value);
+
     this.props.onSearch(this.query.value);
     e.currentTarget.reset();
   }
   
   render() {  
+    <Redirect to="/"/>
     return (
       <form className="search-form" onSubmit={this.handleSubmit} >
         <input type="search" 

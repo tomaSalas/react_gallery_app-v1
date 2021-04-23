@@ -5,18 +5,15 @@ import {
   } from "react-router-dom";
 
   //import data
-import App from "../App"
+import PhotoContainer from "./PhotoContainer";
 
-const MainNav = () => (
+const MainNav = (props) => (
         <nav className="main-nav">
             <ul>
-                <li><NavLink to="/h">Cats</NavLink></li>
-                <li><NavLink to="/n">Dogs</NavLink></li>
-                <li><NavLink to="/m">Computers</NavLink></li>
+                <li><NavLink to="/cats">Cats</NavLink></li>
+                <li><NavLink to="/dogs">Dogs</NavLink></li>
+                <li><NavLink to="/computers">Computers</NavLink></li>
             </ul>
-            <Route path="/h" component={App}  />
-            <Route path="/n" component={App}  />
-            <Route path="/m" component={App}  />
        </nav>
     );
 

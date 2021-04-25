@@ -35,9 +35,9 @@ export default class App extends Component {
 
   componentDidMount() {
 
-    this.featchDataFromFlicker("cat");
-    this.featchDataFromFlicker("dog");
-    this.featchDataFromFlicker("computer");
+    this.featchDataFromFlicker("cats");
+    this.featchDataFromFlicker("dogs");
+    this.featchDataFromFlicker("computers");
     this.featchDataFromFlicker(this.state.QueryToSearch);
     
 
@@ -47,17 +47,17 @@ export default class App extends Component {
   featchDataFromFlicker(query) {
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then( response => {
-        if (query === "cat") {
+        if (query === "cats") {
           this.setState({
             flickerDataCats: response.data.photos.photo,
             loading: false,
             })
-        } else if (query === "dog") {
+        } else if (query === "dogs") {
           this.setState({
             flickerDataDogs: response.data.photos.photo,
             loading: false,
           })
-        } else if (query === "computer") {
+        } else if (query === "computers") {
           this.setState({
             flickerDataComputer: response.data.photos.photo,
             loading: false,
@@ -76,7 +76,7 @@ export default class App extends Component {
         }
       })
       .catch(error => {
-        console.log("Erro fetching and paersing data",error);
+        console.log("Erro fetching and parsing data",error);
       });
   }
 

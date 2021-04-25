@@ -1,11 +1,7 @@
 import React from "react";
 import {
-    Route,
     NavLink
   } from "react-router-dom";
-
-  //import data
-import PhotoContainer from "./PhotoContainer";
 
 const MainNav = (props) => (
         <nav className="main-nav">

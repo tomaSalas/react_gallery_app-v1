@@ -76,7 +76,7 @@ export default class App extends Component {
         }
       })
       .catch(error => {
-        console.log("Erro fetching and parsing data",error);
+        console.log("Error fetching and parsing data", error);
       });
   }
 
